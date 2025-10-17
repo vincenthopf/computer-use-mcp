@@ -399,6 +399,10 @@ async def list_web_tasks() -> dict[str, Any]:
     }
 
 
-if __name__ == "__main__":
-    # Run the MCP server
+def main():
+    """Main entry point for the MCP server."""
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()

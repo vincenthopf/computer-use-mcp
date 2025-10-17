@@ -79,24 +79,31 @@ Gemini Web Automation MCP enables Claude Desktop and other MCP clients to perfor
 - UV package manager ([Install UV](https://github.com/astral-sh/uv))
 - Gemini API key ([Get one here](https://ai.google.dev/))
 
-### Installation (3 Steps)
+### Installation (Super Simple!)
 
-**1. Clone and install dependencies:**
+**Option A: One-Line Install (PyPI)**
+```json
+// Add to Claude Desktop config
+{
+  "mcpServers": {
+    "computer-use": {
+      "command": "uvx",
+      "args": ["computer-use-mcp"],
+      "env": {"GEMINI_API_KEY": "your_key_here"}
+    }
+  }
+}
+```
+Then: `playwright install chromium` and restart Claude Desktop. Done!
+
+**Option B: Local Development**
 ```bash
-git clone https://github.com/yourusername/gemini-web-automation-mcp.git
-cd gemini-web-automation-mcp
+git clone https://github.com/vincenthopf/computer-use-mcp.git
+cd computer-use-mcp
 uv sync
 playwright install chromium
-```
-
-**2. Configure environment:**
-```bash
 cp .env.sample .env
-# Edit .env and add your GEMINI_API_KEY
-```
-
-**3. Test the server:**
-```bash
+# Edit .env with your GEMINI_API_KEY
 uv run mcp dev server.py
 ```
 
@@ -114,21 +121,16 @@ All tests should pass with ✓ markers.
 
 ## Installation
 
-### Method 1: Claude Desktop
+### Method 1: UVX (Recommended - One Command)
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+The simplest way to use this MCP server. Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
 ```json
 {
   "mcpServers": {
-    "gemini-web-automation": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/absolute/path/to/gemini-web-automation-mcp",
-        "run",
-        "server.py"
-      ],
+    "computer-use": {
+      "command": "uvx",
+      "args": ["computer-use-mcp"],
       "env": {
         "GEMINI_API_KEY": "your_api_key_here"
       }
@@ -137,13 +139,20 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
-**Important:** Replace `/absolute/path/to/` with your actual path. Use `pwd` in the repository root to get the full path. Restart Claude Desktop after editing the config.
+**That's it!** `uvx` automatically downloads and installs the package from PyPI. Restart Claude Desktop and you're ready to go.
 
-### Method 2: Direct Clone
+**Note:** You'll also need to install Playwright browsers once:
+```bash
+playwright install chromium
+```
+
+### Method 2: Local Development
+
+For development or contributing:
 
 ```bash
-git clone https://github.com/yourusername/gemini-web-automation-mcp.git
-cd gemini-web-automation-mcp
+git clone https://github.com/vincenthopf/computer-use-mcp.git
+cd computer-use-mcp
 uv sync
 playwright install chromium
 cp .env.sample .env
@@ -151,11 +160,22 @@ cp .env.sample .env
 uv run mcp dev server.py
 ```
 
-### Method 3: UVX (Future)
+### Method 3: Direct Git Install
 
-Once published to PyPI:
-```bash
-uvx --from gemini-web-automation-mcp server.py
+Install directly from GitHub without cloning:
+
+```json
+{
+  "mcpServers": {
+    "computer-use": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/vincenthopf/computer-use-mcp.git", "computer-use-mcp"],
+      "env": {
+        "GEMINI_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
 ```
 
 

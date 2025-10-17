@@ -1,12 +1,12 @@
 [project]
-name = "gemini-web-automation-mcp"
+name = "computer-use-mcp"
 version = "1.0.0"
 description = "Production-ready MCP server providing AI-powered web browsing automation using Gemini 2.5 Computer Use API"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "Gemini Web Automation Contributors", email = "contact@example.com"}
+    {name = "Vincent Hopf", email = "vincent@example.com"}
 ]
 keywords = [
     "mcp",
@@ -25,6 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Internet :: WWW/HTTP :: Browsers",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
@@ -38,14 +39,14 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/gemini-web-automation-mcp"
-Documentation = "https://github.com/yourusername/gemini-web-automation-mcp#readme"
-Repository = "https://github.com/yourusername/gemini-web-automation-mcp"
-Issues = "https://github.com/yourusername/gemini-web-automation-mcp/issues"
-Changelog = "https://github.com/yourusername/gemini-web-automation-mcp/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/vincenthopf/computer-use-mcp"
+Documentation = "https://github.com/vincenthopf/computer-use-mcp#readme"
+Repository = "https://github.com/vincenthopf/computer-use-mcp"
+Issues = "https://github.com/vincenthopf/computer-use-mcp/issues"
+Changelog = "https://github.com/vincenthopf/computer-use-mcp/blob/main/CHANGELOG.md"
 
 [project.scripts]
-gemini-computer-use-mcp = "server:main"
+computer-use-mcp = "server:main"
 
 [project.optional-dependencies]
 dev = [
