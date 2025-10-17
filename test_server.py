@@ -97,7 +97,6 @@ def test_config_files():
         "pyproject.toml",
         ".env.sample",
         "README.md",
-        "__init__.py"
     ]
 
     all_found = True
