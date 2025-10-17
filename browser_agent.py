@@ -6,6 +6,7 @@ import time
 import logging
 import uuid
 import threading
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -25,7 +26,11 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-computer-use-preview-1
 SCREEN_WIDTH = int(os.environ.get("SCREEN_WIDTH", "1440"))
 SCREEN_HEIGHT = int(os.environ.get("SCREEN_HEIGHT", "900"))
 HEADLESS = os.environ.get("HEADLESS", "false").lower() == "true"
-SCREENSHOT_OUTPUT_DIR = os.environ.get("SCREENSHOT_OUTPUT_DIR", "output_screenshots")
+
+# Default to system temp directory for screenshots when running via uvx
+# This ensures we have write permissions even in read-only environments
+_default_screenshot_dir = os.path.join(tempfile.gettempdir(), "gemini-browser-agent", "output_screenshots")
+SCREENSHOT_OUTPUT_DIR = os.environ.get("SCREENSHOT_OUTPUT_DIR", _default_screenshot_dir)
 
 
 class GeminiBrowserAgent:

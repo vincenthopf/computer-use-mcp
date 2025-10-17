@@ -201,8 +201,8 @@ SCREEN_WIDTH=1440        # Recommended by Google (don't change)
 SCREEN_HEIGHT=900        # Recommended by Google (don't change)
 HEADLESS=false           # Set to 'true' for faster headless mode
 
-# Output Configuration
-SCREENSHOT_OUTPUT_DIR=output_screenshots
+# Output Configuration (optional - defaults to system temp directory)
+# SCREENSHOT_OUTPUT_DIR=/custom/path/to/screenshots
 ```
 
 **Note:** Screen resolution of 1440x900 is optimized for Gemini's Computer Use model. Other resolutions may degrade performance.
