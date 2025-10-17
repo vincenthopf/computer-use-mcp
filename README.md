@@ -1,6 +1,8 @@
 # Gemini Web Automation MCP
 
+[![PyPI](https://img.shields.io/pypi/v/computer-use-mcp.svg)](https://pypi.org/project/computer-use-mcp/)
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)
+[![Tests](https://github.com/vincenthopf/computer-use-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/vincenthopf/computer-use-mcp/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-2025-green.svg)](https://modelcontextprotocol.io)
 
