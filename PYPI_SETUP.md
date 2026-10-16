@@ -119,21 +119,6 @@ You can also manually trigger the publish workflow:
 
 ## Workflows Overview
 
-### `test.yml` - Continuous Integration
-
-**Triggers:**
-- Every push to `main`
-- Every pull request
-- Manual trigger
-
-**What it does:**
-- Tests on Python 3.10, 3.11, 3.12, 3.13
-- Runs validation tests (`test_server.py`)
-- Tests package build
-- Checks Python syntax
-
-**Badge:** ![Tests](https://github.com/vincenthopf/computer-use-mcp/actions/workflows/test.yml/badge.svg)
-
 ### `publish.yml` - PyPI Publishing
 
 **Triggers:**
